@@ -10,3 +10,10 @@ function nextSequence(){
 nextSequence();
 
 console.log(gamePattern);
+
+function buttonEffect() {
+    var arrayID = $("#" + gamePattern[0]);
+    arrayID.fadeOut(1000).fadeIn(1000);
+}
+
+buttonEffect();
