@@ -1,4 +1,3 @@
-// alert("hello")
 var buttonColors = ["red", "blue", "green", "blue"];
 var gamePattern = [];
 
