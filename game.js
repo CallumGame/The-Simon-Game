@@ -1,19 +1,19 @@
 var buttonColors = ["red", "blue", "green", "blue"];
 var gamePattern = [];
 
-function nextSequence(){
+function nextSequence() {
     var randomNumber = Math.floor(Math.random() * buttonColors.length);
     var randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
+
+ 
+    $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
     
-};
-nextSequence();
 
-console.log(gamePattern);
-
-function buttonEffect() {
-    var arrayID = $("#" + gamePattern[0]);
-    arrayID.fadeOut(1000).fadeIn(1000);
+    var audio = new Audio("sounds/" + gamePattern + ".mp3");
+    audio.play();
 }
 
-buttonEffect();
+nextSequence();
+
+
