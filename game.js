@@ -5,15 +5,35 @@ function nextSequence() {
     var randomNumber = Math.floor(Math.random() * buttonColors.length);
     var randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
-
- 
-    $("#" + randomChosenColor).fadeIn(100).fadeOut(100).fadeIn(100);
+    function buttonSound(){
+        if (gamePattern[0] === "green") {
+            var green = new Audio("sounds/green.mp3");
+            green.play();
+        } else if (gamePattern[0] === "blue") {
+            var blue = new Audio("sounds/blue.mp3");
+            blue.play();
+        } else if (gamePattern[0] === "red") {
+            var red = new Audio("sounds/red.mp3");
+            red.play();
+        } else if (gamePattern[0] === "yellow") {
+            var yellow = new Audio("sounds/yellow.mp3");
+            yellow.play();
+        }
+    }
     
-
-    var audio = new Audio("sounds/" + gamePattern + ".mp3");
-    audio.play();
+        $("#" + gamePattern[0]).fadeOut(100).fadeIn(100);
+        buttonSound();
+    
+        $("button").click(function(){
+            $("button").css("color", "red");
+        });
 }
 
 nextSequence();
+
+
+
+console.log(gamePattern);
+
 
 
