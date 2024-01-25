@@ -56,11 +56,17 @@ $(document).ready(function () {
         setTimeout(function () {
             $("body").removeClass("game-over");
         }, 200);
+        startOver();
         }
     }
 
-
-
+    function startOver(){
+        buttonColors = ["red", "blue", "green", "yellow"];
+        gamePattern = [];
+        userClickedPattern = [];
+        level = 0;
+    }
+    
     $(document).keypress(function () {
         nextSequence();
     });
